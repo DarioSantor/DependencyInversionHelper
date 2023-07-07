@@ -3,11 +3,11 @@ public struct DependencyInversionHelper {
     var dependencies = [String: AnyObject]()
     static var shared = DependencyInversionHelper()
     
-    static func register<T>(_ type: T.Type, instance: T) {
+    public static func register<T>(_ type: T.Type, instance: T) {
         shared.register(T.self, instance: instance)
     }
     
-    static func resolve<T>() -> T {
+    public static func resolve<T>() -> T {
         shared.resolve()
     }
     
@@ -25,10 +25,10 @@ public struct DependencyInversionHelper {
 }
 
 @propertyWrapper
-struct Resolver<T> {
-    var wrappedValue: T
+public struct Resolver<T> {
+    public var wrappedValue: T
     
-    init() {
+    public init() {
         wrappedValue = DependencyInversionHelper.resolve()
     }
 }
