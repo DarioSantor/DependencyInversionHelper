@@ -11,7 +11,7 @@ public struct DependencyInversionHelper {
         shared.register(T.self, instance: instance)
     }
     
-    public static func resolve<T>() -> T {
+    static func resolve<T>() -> T {
         shared.resolve()
     }
     
