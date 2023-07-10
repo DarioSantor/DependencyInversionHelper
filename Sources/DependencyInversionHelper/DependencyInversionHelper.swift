@@ -3,6 +3,10 @@ public struct DependencyInversionHelper {
     var dependencies = [String: AnyObject]()
     static var shared = DependencyInversionHelper()
     
+    /// Method to register the Class instance to the correspondent Protocol
+    /// - Parameters:
+    ///   - type: Protocol.self
+    ///   - instance: Class
     public static func register<T>(_ type: T.Type, instance: T) {
         shared.register(T.self, instance: instance)
     }
@@ -25,6 +29,7 @@ public struct DependencyInversionHelper {
 }
 
 @propertyWrapper
+/// To register the key-value pair between the Protocol and the Class
 public struct Resolver<T> {
     public var wrappedValue: T
     
