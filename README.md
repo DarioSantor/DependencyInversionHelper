@@ -10,7 +10,7 @@ The way of installing DependencyInversionHelper is via the Swift Package Manager
 3. For Rules, select Version (Up to Next Minor) and click Next.
 4. Click Finish.
 
-Use:
+Usage:
 This package has two functions:
 
 * register()
